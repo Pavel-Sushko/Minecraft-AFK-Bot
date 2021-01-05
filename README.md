@@ -1,2 +1,2 @@
 # Minecraft-AFK-Bot
-Case specific AFK Minecraft bot for a client
+Very simple case specific AFK Minecraft bot for a client
