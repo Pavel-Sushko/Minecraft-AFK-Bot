@@ -5,6 +5,19 @@ from pydirectinput import press
 from Utils._KeyHold import key_hold
 
 
+def click(times, delay_ms):
+    # Clicks 84 times
+    for x in range(times):
+        # Saves initial position
+        (x, y) = pydirectinput.position()
+        # X is x position of mouse, Y is y position of mouse
+        pydirectinput.click()
+        # Moves back to original position
+        pydirectinput.moveTo(x, y)
+        # Delay between clicks
+        sleep(delay_ms / 1000)
+
+
 def macro():
     # Holds down the "a" key for 1250 ms
     key_hold("a", 1250)
@@ -16,8 +29,7 @@ def macro():
     pydirectinput.keyDown("w")
 
     # Clicks 84 times
-    for x in range(84):
-        pydirectinput.click(x=1179, y=241)
+    click(times=84, delay_ms=300)
 
     # Releases the "w" key
     pydirectinput.keyUp("w")
@@ -32,8 +44,7 @@ def macro():
     pydirectinput.keyDown("s")
 
     # Clicks 84 times
-    for x in range(84):
-        pydirectinput.click(x=1179, y=241)
+    click(times=84, delay_ms=300)
 
     # Presses the "escape" key twice
     press("escape", 2, interval=200)

@@ -1,19 +1,21 @@
 import time
-from pydirectinput import press
 from Utils._Macro import macro
-
-
-def bz():
-    press("/")
-    press("b")
-    press("z")
-
+from win32gui import GetWindowText, GetForegroundWindow
 
 # Gives time to open the application that requires the inputs
 time.sleep(4)
 
-while True:
-    for x in range (100):
-        macro()
+active_window_name = GetWindowText(GetForegroundWindow())
 
-    bz()
+while True:
+    while "Notepad" in active_window_name:
+        for x in range(100):
+            if "Notepad" in active_window_name:
+                macro()
+
+            else:
+                break
+
+    active_window_name = GetWindowText(GetForegroundWindow())
+
+
