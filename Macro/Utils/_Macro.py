@@ -8,12 +8,8 @@ from Utils._KeyHold import key_hold
 def click(times, delay_ms):
     # Clicks 84 times
     for x in range(times):
-        # Saves initial position
-        (x, y) = pydirectinput.position()
         # X is x position of mouse, Y is y position of mouse
         pydirectinput.click()
-        # Moves back to original position
-        pydirectinput.moveTo(x, y)
         # Delay between clicks
         sleep(delay_ms / 1000)
 
