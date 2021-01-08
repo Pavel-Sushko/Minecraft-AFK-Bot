@@ -25,7 +25,7 @@ def macro():
     pydirectinput.keyDown("w")
 
     # Clicks 84 times
-    click(times=84, delay_ms=300)
+    click(times=84, delay_ms=0)
 
     # Releases the "w" key
     pydirectinput.keyUp("w")
@@ -33,23 +33,29 @@ def macro():
     # Holds down the "a" key for 1250 ms
     key_hold("a", 1250)
 
-    # Delay between key presses
-    sleep(0.25)
-
     # Presses down the "s" key until asked to release
     pydirectinput.keyDown("s")
 
     # Clicks 84 times
-    click(times=84, delay_ms=300)
+    click(times=84, delay_ms=0)
 
-    # Presses the "escape" key twice
-    press("escape", 2, interval=200)
+    # Releases the "s" key
+    pydirectinput.keyUp("s")
+
+    # Delay between key presses
+    sleep(0.25)
+
+    # Presses down the "a" key un   til asked to release
+    pydirectinput.keyDown("a")
 
     # Delay between key presses
     sleep(0.5)
 
-    # Releases the "s" key
-    pydirectinput.keyUp("s")
+    # Releases the "a" key
+    pydirectinput.keyUp("a")
+
+    # Presses the "escape" key twice
+    press(keys="escape", presses=2, interval=0.5)
 
     # Delay between key presses
     sleep(0.5)
@@ -97,7 +103,7 @@ def macro():
     sleep(0.5)
 
     # Presses the "Up Arrow" key once
-    press("up", 2, interval=500)
+    press("up", 2, interval=0.5)
 
     # Delay between key presses
     sleep(0.5)
@@ -109,4 +115,4 @@ def macro():
     sleep(0.5)
 
     # Delay between key presses
-    sleep(25)
+    sleep(2.5)
